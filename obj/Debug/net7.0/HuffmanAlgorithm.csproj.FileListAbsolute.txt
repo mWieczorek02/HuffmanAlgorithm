@@ -1,0 +1,15 @@
+D:\coding\csharp\HuffmanAlgorithm\bin\Debug\net7.0\HuffmanAlgorithm.exe
+D:\coding\csharp\HuffmanAlgorithm\bin\Debug\net7.0\HuffmanAlgorithm.deps.json
+D:\coding\csharp\HuffmanAlgorithm\bin\Debug\net7.0\HuffmanAlgorithm.runtimeconfig.json
+D:\coding\csharp\HuffmanAlgorithm\bin\Debug\net7.0\HuffmanAlgorithm.dll
+D:\coding\csharp\HuffmanAlgorithm\bin\Debug\net7.0\HuffmanAlgorithm.pdb
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\HuffmanAlgorithm.csproj.AssemblyReference.cache
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\HuffmanAlgorithm.GeneratedMSBuildEditorConfig.editorconfig
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\HuffmanAlgorithm.AssemblyInfoInputs.cache
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\HuffmanAlgorithm.AssemblyInfo.cs
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\HuffmanAlgorithm.csproj.CoreCompileInputs.cache
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\HuffmanAlgorithm.dll
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\refint\HuffmanAlgorithm.dll
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\HuffmanAlgorithm.pdb
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\HuffmanAlgorithm.genruntimeconfig.cache
+D:\coding\csharp\HuffmanAlgorithm\obj\Debug\net7.0\ref\HuffmanAlgorithm.dll

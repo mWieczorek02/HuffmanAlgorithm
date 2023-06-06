@@ -1,0 +1,80 @@
+﻿namespace HuffmanAlgorithm;
+
+internal class Node
+{
+    public string Symbol { get; init; }
+    public int Frequency { get; init; }
+    public Node? Left { get; init; }
+    public Node? Right { get; init; }
+}
+
+internal static class Huffman
+{
+    private static Dictionary<string, int> ParseFrequenciesFromFile(string filePath) =>
+        File.ReadLines(filePath).Skip(1).Select(l => l.Split(" "))
+            .ToDictionary(sl => sl[0], sl => int.Parse(sl[1]));
+
+
+    public static Dictionary<string, string> GetHuffmanCodes(this string filePath)
+    {
+        var frequencies = ParseFrequenciesFromFile(filePath);
+        var queue = BuildPriorityQueue(frequencies);
+        var root = BuildHuffmanTree(queue);
+        return GenerateCodes(root);
+    }
+
+    private static PriorityQueue<Node, int> BuildPriorityQueue(Dictionary<string, int> frequencies)
+    {
+        var queue = new PriorityQueue<Node, int>();
+
+        frequencies.Select(kvp => new Node
+        {
+            Symbol = kvp.Key,
+            Frequency = kvp.Value
+        }).ToList().ForEach(node => queue.Enqueue(node, node.Frequency));
+
+        return queue;
+    }
+
+    private static Node BuildHuffmanTree(PriorityQueue<Node, int> queue)
+    {
+        while (queue.Count > 1)
+        {
+            var left = queue.Dequeue();
+            var right = queue.Dequeue();
+
+            var parent = new Node
+            {
+                Symbol = left.Symbol + right.Symbol,
+                Frequency = left.Frequency + right.Frequency,
+                Left = left,
+                Right = right
+            };
+
+            queue.Enqueue(parent, parent.Frequency);
+        }
+
+        // return root
+        return queue.Dequeue();
+    }
+
+    private static Dictionary<string, string> GenerateCodes(Node root)
+    {
+        var codes = new Dictionary<string, string>();
+        GenerateCodesRecursive(root, "", codes);
+        return codes;
+    }
+
+    private static void GenerateCodesRecursive(Node node, string code, IDictionary<string, string> codes)
+    {
+        //leaf
+        if (node.Left is null && node.Right is null)
+        {
+            codes[node.Symbol] = code;
+            return;
+        }
+
+        if (node.Left is not null) GenerateCodesRecursive(node.Left, code + "0", codes);
+        if (node.Right is not null) GenerateCodesRecursive(node.Right, code + "1", codes);
+    }
+}
